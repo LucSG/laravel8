@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
         $posts = Post::get();
 
@@ -16,7 +17,15 @@ class PostController extends Controller
         ]);
     }
 
-    public function create(){
+    public function create()
+    {
         return view('admin.posts.create');
+    }
+
+    public function store(Request $request)
+    {
+        $post = Post::create($request->all());
+
+        return redirect()->route('posts.index');
     }
 }
