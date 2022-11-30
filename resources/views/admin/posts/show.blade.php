@@ -1,3 +1,8 @@
+@extends('admin.layouts.app')
+
+@section('title', 'Detalhes do Post')
+
+@section('content')
 <h1>Detalhes do post</h1>
 
 <ul>
@@ -15,3 +20,5 @@
     <input type="hidden" name="_method" value ="GET">
     <button>Editar o Post: {{$post -> title}}</button> 
 </form>
+    
+@endsection
